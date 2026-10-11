@@ -24,18 +24,18 @@ const Currency = () => {
 
 
   return (
-    <div className='flex items-center justify-center min-h-screen bg-slate-100'>
-        <div className='min-w-[400px] min-h-[500px] border border-black rounded-xl flex flex-col items-center bg-white rounded-2xl shadow-lg p-6'>
-            <h1 className='text-3xl font-bold text-slate-800'>Currency Converter!</h1>
-            <input onChange={(e)=>Setamount(e.target.value)} type='number' placeholder='Enter Here!' className='border border-slate-300 rounded-lg px-3 py-2 w-full mt-5'></input>
-            <div className='flex justify-between w-full mt-5'>
+    <div className='flex items-center justify-center min-h-screen w-full  bg-slate-100'>
+        <div className='w-full max-w-md md:max-w-xl border border-black flex flex-col items-center bg-white rounded-2xl shadow-lg p-6'>
+            <h1 className='text-2xl sm:text-3xl  font-bold text-slate-800'>Currency Converter!</h1>
+            <input  onChange={(e)=>Setamount(e.target.value)} value={amount} type='number' placeholder='Enter Here!' className='border border-slate-300 rounded-lg px-3 py-2 w-full mt-5'></input>
+            <div className='gap-6 w-full mt-5 grid grid-cols-1 md:grid-cols-2'>
                 <div>
                 <p className='text-sm font-medium text-slate-600 mb-1'>
                 from
                 </p>
                 <div className='flex border border-black rounded-xl'>
-                <img src={`https://flagsapi.com/${countryList[from]}/flat/64.png`}></img>
-                <select value={from} onChange={(e)=>Setfrom(e.target.value)}> 
+                <img className='shrink-0 w-8' src={`https://flagsapi.com/${countryList[from]}/flat/64.png`}></img>
+                <select className='w-full min-w-0' value={from} onChange={(e)=>Setfrom(e.target.value)}> 
                     {Object.keys(countryList).map((e)=>(
                         <option key={e} value={e} >{e}</option>
                     ))}
@@ -47,8 +47,8 @@ const Currency = () => {
                 to
                 </p>
                <div className='flex border border-black rounded-xl mr-1'>
-                <img src={`https://flagsapi.com/${countryList[to]}/flat/64.png`}></img>
-                <select value={to} onChange={(e)=>SetTo(e.target.value)}>
+                <img className='shrink-0 w-8' src={`https://flagsapi.com/${countryList[to]}/flat/64.png`}></img>
+                <select  className='w-full min-w-0' value={to} onChange={(e)=>SetTo(e.target.value)}>
                     {Object.keys(countryList).map((e)=>(
                         <option key={e} value={e} >{e}</option>
                     ))}
